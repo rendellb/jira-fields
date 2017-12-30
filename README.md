@@ -1,6 +1,6 @@
-# JIRA to Google Sheets
+# JIRA Field Finder
 
-This Python script retrieves data using the JIRA API and writes it to Google Sheets using the Google Sheets API. You'll need to have your own JIRA token, client_secret data, and Google Sheet that you have access to.
+This Python script can either provide a dump of JIRA fields or allow you to search for a field based on the value. This is helpful for identifying custom fields that may need to be pulled from another script, such as the JIRA to Google Sheets script.
 
 ## Setup
 
@@ -15,10 +15,4 @@ pip install -r requirements.txt
 
 * Replace the domain in the apiBase URL with your company's JIRA domain.
 
-* Download and replace the client_secrets.json file with yours from the Google Cloud Platform.
-
-* Populate the sheet var with the Google Sheet spreadsheet ID, tab var with the tab name in the sheet, and query var with your JQL query.
-
-* Run run!
-
-If everything is correctly set up, you'll be prompted to select your Google account, which will then be stored as a file to the same directory and saved for future use. From there, the script will retrieve data from the JIRA API based on your query and write it to the Google Sheet based on your spreadsheet ID and tab.
+* Run either dumpFields(issueKey) to get all of the fields and their values or searchFields(issueKey, value) to find fields with the corresponding value.
